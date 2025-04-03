@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Red Hat Text", serif;
+  background-color: var(--Rose-100);
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+  --cl-primary: #c73a0f;
+  --cl-secondary: #1ea475;
+
+  --Rose-50: #fcf9f7;
+  --Rose-100: #f4edeb;
+  --Rose-300: #c9aea6;
+  --Rose-400: #ad8985;
+  --Rose-500: #87635a;
+  --Rose-900: #260f08;
+
+  /* - Font size (product names): 16px */
+}
+
+.heading-primary {
+  color: var(--Rose-900);
+  font-weight: 700;
+  font-size: 3rem;
+}
+.prod {
+  color: var(--Rose-300);
+}
+.products-image-heading {
+  font-size: 1rem;
+  color: var(--Rose-900);
+}
+.price-tag {
+  color: var(--cl-primary);
+  font-weight: 600;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.prod-img-cont {
+  position: relative;
+}
+.cart-button {
+  display: flex;
+  /* justify-content: space-around; */
+  padding: 0.5rem 1rem;
+  background-color: var(--Rose-50);
+  border: 1px solid var(--Rose-500);
+  border-radius: 1rem;
+  color: var(--Rose-900);
+  font-weight: 600;
+  gap: 1rem;
+  position: absolute;
+  top: -17px;
+  left: 21px;
+}
+
+/* cart-section */
+.cart-section {
+  padding: 2rem;
+  background: var(--Rose-50);
+  border-radius: 8px;
+  box-shadow:  0px 7px 12px rgba(0, 0, 0, 0.1)
+}
+.cart-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+.cart-h2 {
+  color: var(--cl-primary);
+}
+.p-cart {
+  color: var(--Rose-400);
+}
+
+
+@media(min-width: 768px ){
+  #products-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .container {
+    /* max-width: 1200px; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 3rem 0;
+    gap: 3rem;
+  }
+  .heading-primary {
+    font-size: 4rem;
+  }
+  .products-section {
+    width: 65%;
+  }
+  #products-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .cart-section {
+    width: 30%;
+    margin-top: 2rem;
+  }
+}

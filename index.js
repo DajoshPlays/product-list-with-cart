@@ -1,5 +1,11 @@
 "use strict";
 
+// selecting all variables
+const cartContainer = document.querySelector(".cart-cont");
+const itemsNumber = document.getElementById("cart-number");
+
+
+
 fetch('./data.json')
     .then(res => res.json())
     .then(data => {
@@ -8,11 +14,14 @@ fetch('./data.json')
 
         productsContainer.innerHTML = data.map(product => `
             <div class = "product-card">
-                <picture>
+                <picture class= "prod-img-cont">
                     <source srcset = "${product.image.desktop}" media = "(min-width : 1024px)">
                     <source srcset = "${product.image.tablet}" media = "(min-width : 768px)">
                     <source srcset = "${product.image.mobile}" media = "(max-width : 767px)">
                     <img src = "${product.image.thumbnail}" alt ="${product.name}">
+                    <button class="cart-button">
+                        <img src= "./assets/images/icon-add-to-cart.svg" alt="shopping basket"> Add to Cart
+                    </button>
                 </picture>
                 <div class="product-info">
                     <span class="prod">${product.category}</span>
@@ -24,4 +33,4 @@ fetch('./data.json')
         console.log(data)
     })
     .catch(error => console.error('Error fetching Json:', error))
-const cartContainer = document.querySelector(".cart-cont");
+
